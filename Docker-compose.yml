@@ -1,7 +1,7 @@
 version: "3.3"
 services:
   Jenkins:
-    image:jenkins/jenkins:lts
+    image: jenkins/jenkins:lts
     container_name: jenkins
     ports: 
       - "8080:8080"
@@ -15,7 +15,7 @@ services:
       - /opt/downloads:/var/downloads
       - /opt/jenkins_home:/var/jenkins_home
   Tomcat:
-    image:tomcat:latest
+    image: tomcat:latest
     container_name: tomcat
     ports:
       - "8888:8080"
@@ -24,7 +24,7 @@ services:
       restart_policy:
         condition: on-failure
   Mysql:
-    image:mysql:latest
+    image: mysql:latest
     container_name: mysql
     ports:
       - "3306:3306"
@@ -35,7 +35,7 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: H@ckath0n
   Sonarqube:
-    image:sonarqube:latest
+    image: sonarqube:latest
     container_name: sonarqube
     ports:
       - "9000:9000"
@@ -44,7 +44,7 @@ services:
       restart_policy:
         condition: on-failure
   Nexus:
-    image:sonatype/nexus3:latest
+    image: sonatype/nexus3:latest
     container_name: nexus
     ports:
       - "8081:8081"

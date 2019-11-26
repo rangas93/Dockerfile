@@ -15,7 +15,7 @@ RUN cd /usr/local/tomcat/Dockerfile/ && ls
 COPY /usr/local/tomcat/Dockerfile/tomcat-users.xml /usr/local/tomcat/conf/tomcat-users.xml
 COPY /usr/local/tomcat/Dockerfile/server.xml /usr/local/tomcat/conf/server.xml
 COPY /usr/local/tomcat/Dockerfile/context.xml /usr/local/tomcat/webapps/manager/META-INF/context.xml
-COPY /usr/local/tomcat/webapps/build /var/jenkins_home/build
+COPY /usr/local/tomcat/webapps/build /root/.jenkins/workspace/jenkins-docker/build
 
 
 EXPOSE 8082

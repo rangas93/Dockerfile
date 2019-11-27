@@ -12,10 +12,10 @@ RUN tar xvfz apache*.tar.gz
 RUN mv apache-tomcat-9.0.27/* /usr/local/tomcat/.
 RUN git clone https://github.com/Sravani9611/Dockerfile.git
 RUN cd /usr/local/tomcat/Dockerfile/ && ls
-COPY /usr/local/tomcat/Dockerfile/tomcat-users.xml /usr/local/tomcat/conf/tomcat-users.xml
-COPY /usr/local/tomcat/Dockerfile/server.xml /usr/local/tomcat/conf/server.xml
-COPY /usr/local/tomcat/Dockerfile/context.xml /usr/local/tomcat/webapps/manager/META-INF/context.xml
-COPY /usr/local/tomcat/webapps/build /root/.jenkins/workspace/jenkins-docker/build
+RUN /usr/local/tomcat/Dockerfile/tomcat-users.xml /usr/local/tomcat/conf/tomcat-users.xml
+RUN /usr/local/tomcat/Dockerfile/server.xml /usr/local/tomcat/conf/server.xml
+RUN /usr/local/tomcat/Dockerfile/context.xml /usr/local/tomcat/webapps/manager/META-INF/context.xml
+
 
 
 EXPOSE 8082
